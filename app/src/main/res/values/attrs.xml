@@ -1,0 +1,6 @@
+<resources>
+    <!-- Button styles for views built in code (MaterialButton(context, null, attr)). -->
+    <attr name="emuTonalButtonStyle" format="reference" />
+    <attr name="emuTextButtonStyle" format="reference" />
+    <attr name="emuFilledButtonStyle" format="reference" />
+</resources>

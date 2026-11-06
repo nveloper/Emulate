@@ -1,0 +1,12 @@
+.gradle/
+.idea/
+.kotlin/
+build/
+app/build/
+app/.cxx/
+build-cores/
+local.properties
+*.iml
+# Built core binaries (regenerate with scripts/build-cores.sh)
+app/src/main/jniLibs/
+third_party/

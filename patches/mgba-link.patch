@@ -1,0 +1,60 @@
+diff --git a/src/platform/libretro/libretro.c b/src/platform/libretro/libretro.c
+index abed4cc..6be1688 100644
+--- a/src/platform/libretro/libretro.c
++++ b/src/platform/libretro/libretro.c
+@@ -43,6 +43,7 @@ FS_Archive sdmcArchive;
+ #endif
+ 
+ #include "libretro_core_options.h"
++#include "libretro-link.h"
+ 
+ #define GBA_AUDIO_CHUNK_FRAMES 1024
+ #define GB_SAMPLES 512
+@@ -1285,6 +1286,7 @@ unsigned retro_api_version(void) {
+ void retro_set_environment(retro_environment_t env) {
+ 	environCallback = env;
+ 	libretroVFSInit(env);
++	LinkSetEnvironment(env);
+ 
+ #ifdef M_CORE_GB
+ 	const struct GBColorPreset* presets;
+@@ -1538,6 +1540,13 @@ void retro_run(void) {
+ 	if (deferredSetup) {
+ 		_doDeferredSetup();
+ 	}
++	if (LinkRunPartial()) {
++		/* Ran only far enough to answer a link partner; no new frame to show. */
++		unsigned width, height;
++		core->currentVideoSize(core, &width, &height);
++		videoCallback(NULL, width, height, 0);
++		return;
++	}
+ 	uint16_t keys;
+ 	bool skipFrame = false;
+ 
+@@ -1669,7 +1678,9 @@ void retro_run(void) {
+       updateAudioLatency = false;
+    }
+ 
++	LinkFrameStart();
+ 	core->runFrame(core);
++	LinkFrameEnd();
+ 	unsigned width, height;
+ 	core->currentVideoSize(core, &width, &height);
+ 
+@@ -2055,6 +2066,7 @@ bool retro_load_game(const struct retro_game_info* game) {
+ 
+ 	_reloadSettings();
+ 	core->loadROM(core, rom);
++	LinkAttach(core);
+ 	deferredSetup = true;
+ 
+ 	const char* sysDir = 0;
+@@ -2124,6 +2136,7 @@ void retro_unload_game(void) {
+ 	if (!core) {
+ 		return;
+ 	}
++	LinkDetach();
+ 	mCoreConfigDeinit(&core->config);
+ 	core->deinit(core);
+ 	mappedMemoryFree(data, dataSize);

@@ -1,0 +1,125 @@
+<resources>
+    <!-- Material 3 with dynamic colour (wallpaper-based on Android 12+, applied in EmulateApp) and
+         Google Sans Flex everywhere. Follows the system light/dark setting. -->
+    <style name="Base.Theme.Emulate" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowSplashScreenBackground">@color/splash_background</item>
+        <item name="fontFamily">@font/google_sans</item>
+        <item name="android:fontFamily">@font/google_sans</item>
+        <item name="textAppearanceDisplayLarge">@style/TextAppearance.Emulate.DisplayLarge</item>
+        <item name="textAppearanceDisplayMedium">@style/TextAppearance.Emulate.DisplayMedium</item>
+        <item name="textAppearanceDisplaySmall">@style/TextAppearance.Emulate.DisplaySmall</item>
+        <item name="textAppearanceHeadlineLarge">@style/TextAppearance.Emulate.HeadlineLarge</item>
+        <item name="textAppearanceHeadlineMedium">@style/TextAppearance.Emulate.HeadlineMedium</item>
+        <item name="textAppearanceHeadlineSmall">@style/TextAppearance.Emulate.HeadlineSmall</item>
+        <item name="textAppearanceTitleLarge">@style/TextAppearance.Emulate.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.Emulate.TitleMedium</item>
+        <item name="textAppearanceTitleSmall">@style/TextAppearance.Emulate.TitleSmall</item>
+        <item name="textAppearanceBodyLarge">@style/TextAppearance.Emulate.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.Emulate.BodyMedium</item>
+        <item name="textAppearanceBodySmall">@style/TextAppearance.Emulate.BodySmall</item>
+        <item name="textAppearanceLabelLarge">@style/TextAppearance.Emulate.LabelLarge</item>
+        <item name="textAppearanceLabelMedium">@style/TextAppearance.Emulate.LabelMedium</item>
+        <item name="textAppearanceLabelSmall">@style/TextAppearance.Emulate.LabelSmall</item>
+        <item name="emuTonalButtonStyle">@style/Widget.Material3.Button.TonalButton</item>
+        <item name="emuTextButtonStyle">@style/Widget.Material3.Button.TextButton</item>
+        <item name="emuFilledButtonStyle">@style/Widget.Material3.Button</item>
+    </style>
+
+    <!-- The game screen: always dark (games are shown on black), still wallpaper-tinted. -->
+    <style name="Base.Theme.Emulate.Dark" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowSplashScreenBackground">@color/splash_background</item>
+        <item name="fontFamily">@font/google_sans</item>
+        <item name="android:fontFamily">@font/google_sans</item>
+        <item name="textAppearanceDisplayLarge">@style/TextAppearance.Emulate.DisplayLarge</item>
+        <item name="textAppearanceDisplayMedium">@style/TextAppearance.Emulate.DisplayMedium</item>
+        <item name="textAppearanceDisplaySmall">@style/TextAppearance.Emulate.DisplaySmall</item>
+        <item name="textAppearanceHeadlineLarge">@style/TextAppearance.Emulate.HeadlineLarge</item>
+        <item name="textAppearanceHeadlineMedium">@style/TextAppearance.Emulate.HeadlineMedium</item>
+        <item name="textAppearanceHeadlineSmall">@style/TextAppearance.Emulate.HeadlineSmall</item>
+        <item name="textAppearanceTitleLarge">@style/TextAppearance.Emulate.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.Emulate.TitleMedium</item>
+        <item name="textAppearanceTitleSmall">@style/TextAppearance.Emulate.TitleSmall</item>
+        <item name="textAppearanceBodyLarge">@style/TextAppearance.Emulate.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.Emulate.BodyMedium</item>
+        <item name="textAppearanceBodySmall">@style/TextAppearance.Emulate.BodySmall</item>
+        <item name="textAppearanceLabelLarge">@style/TextAppearance.Emulate.LabelLarge</item>
+        <item name="textAppearanceLabelMedium">@style/TextAppearance.Emulate.LabelMedium</item>
+        <item name="textAppearanceLabelSmall">@style/TextAppearance.Emulate.LabelSmall</item>
+        <item name="emuTonalButtonStyle">@style/Widget.Material3.Button.TonalButton</item>
+        <item name="emuTextButtonStyle">@style/Widget.Material3.Button.TextButton</item>
+        <item name="emuFilledButtonStyle">@style/Widget.Material3.Button</item>
+    </style>
+
+    <style name="Theme.Emulate" parent="Base.Theme.Emulate" />
+
+    <style name="Theme.Emulate.Fullscreen" parent="Base.Theme.Emulate.Dark">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+    </style>
+
+    <style name="TextAppearance.Emulate.DisplayLarge" parent="TextAppearance.Material3.DisplayLarge">
+        <item name="fontFamily">@font/google_sans</item>
+        <item name="android:fontFamily">@font/google_sans</item>
+    </style>
+    <style name="TextAppearance.Emulate.DisplayMedium" parent="TextAppearance.Material3.DisplayMedium">
+        <item name="fontFamily">@font/google_sans</item>
+        <item name="android:fontFamily">@font/google_sans</item>
+    </style>
+    <style name="TextAppearance.Emulate.DisplaySmall" parent="TextAppearance.Material3.DisplaySmall">
+        <item name="fontFamily">@font/google_sans</item>
+        <item name="android:fontFamily">@font/google_sans</item>
+    </style>
+    <style name="TextAppearance.Emulate.HeadlineLarge" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="fontFamily">@font/google_sans</item>
+        <item name="android:fontFamily">@font/google_sans</item>
+    </style>
+    <style name="TextAppearance.Emulate.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="fontFamily">@font/google_sans</item>
+        <item name="android:fontFamily">@font/google_sans</item>
+    </style>
+    <style name="TextAppearance.Emulate.HeadlineSmall" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="fontFamily">@font/google_sans</item>
+        <item name="android:fontFamily">@font/google_sans</item>
+    </style>
+    <style name="TextAppearance.Emulate.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
+        <item name="fontFamily">@font/google_sans</item>
+        <item name="android:fontFamily">@font/google_sans</item>
+    </style>
+    <style name="TextAppearance.Emulate.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
+        <item name="fontFamily">@font/google_sans</item>
+        <item name="android:fontFamily">@font/google_sans</item>
+    </style>
+    <style name="TextAppearance.Emulate.TitleSmall" parent="TextAppearance.Material3.TitleSmall">
+        <item name="fontFamily">@font/google_sans</item>
+        <item name="android:fontFamily">@font/google_sans</item>
+    </style>
+    <style name="TextAppearance.Emulate.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
+        <item name="fontFamily">@font/google_sans</item>
+        <item name="android:fontFamily">@font/google_sans</item>
+    </style>
+    <style name="TextAppearance.Emulate.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="fontFamily">@font/google_sans</item>
+        <item name="android:fontFamily">@font/google_sans</item>
+    </style>
+    <style name="TextAppearance.Emulate.BodySmall" parent="TextAppearance.Material3.BodySmall">
+        <item name="fontFamily">@font/google_sans</item>
+        <item name="android:fontFamily">@font/google_sans</item>
+    </style>
+    <style name="TextAppearance.Emulate.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
+        <item name="fontFamily">@font/google_sans</item>
+        <item name="android:fontFamily">@font/google_sans</item>
+    </style>
+    <style name="TextAppearance.Emulate.LabelMedium" parent="TextAppearance.Material3.LabelMedium">
+        <item name="fontFamily">@font/google_sans</item>
+        <item name="android:fontFamily">@font/google_sans</item>
+    </style>
+    <style name="TextAppearance.Emulate.LabelSmall" parent="TextAppearance.Material3.LabelSmall">
+        <item name="fontFamily">@font/google_sans</item>
+        <item name="android:fontFamily">@font/google_sans</item>
+    </style>
+</resources>
